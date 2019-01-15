@@ -36,7 +36,7 @@ func execute(port string) {
 
 	router := gin.Default()
 	var cmntHandler handler.CommentHandler
-	v1 := router.Group("/api/v1")
+	v1 := router.Group("/v1")
 	{
 		comments := v1.Group("/comments")
 		{
