@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"fmt"
 	"net/http"
 	"strconv"
 
@@ -26,11 +27,13 @@ func (h *cmntHandler) FetchComment(ctx *gin.Context) {
 	idstr := ctx.Param("id")
 	id, err := strconv.Atoi(idstr)
 	if err != nil {
+		fmt.Sprintln(err)
 		httputil.NewHTTPError(ctx, http.StatusBadRequest, err)
 		return
 	}
 	result, err := h.apiUsecase.FetchComment(id)
 	if err != nil {
+		fmt.Sprintln(err)
 		httputil.NewHTTPError(ctx, http.StatusInternalServerError, err)
 		return
 	}
