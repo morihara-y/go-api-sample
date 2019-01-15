@@ -1,3 +1,5 @@
+use comment
+
 CREATE TABLE user_comment (
   comment_id int PRIMARY KEY,
   user_id int,
