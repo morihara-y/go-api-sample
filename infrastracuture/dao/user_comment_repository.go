@@ -4,6 +4,7 @@ import (
 	"database/sql"
 
 	"github.com/go-gorp/gorp"
+	_ "github.com/go-sql-driver/mysql"
 
 	"github.com/morihara-y/go-api-sample/domain/model"
 	"github.com/morihara-y/go-api-sample/domain/repository"
