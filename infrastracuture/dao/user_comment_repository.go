@@ -17,9 +17,8 @@ func NewUserCommentRepository() repository.UserCommentRepository {
 }
 
 func (r *userCommentRepository) FetchByID(id int) (comment model.Comment, err error) {
-	db, err := sql.Open("mysql", "comment:password@/comment")
+	db, err := sql.Open("mysql", "comment:password@localhost:3306/comment")
 	if err != nil {
-		db.Close()
 		return comment, err
 	}
 	dbmap := &gorp.DbMap{Db: db, Dialect: gorp.MySQLDialect{"InnoDB", "UTF8"}}
